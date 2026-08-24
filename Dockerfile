@@ -7,6 +7,8 @@ WORKDIR /app
 # Copia todos los archivos del proyecto al contenedor
 COPY . .
 
+RUN chmod +x mvnw
+
 # Ejecuta Maven para limpiar y compilar el proyecto, generando el .jar (sin tests)
 RUN ./mvnw clean package -DskipTests
 
